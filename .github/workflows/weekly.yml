@@ -19,10 +19,9 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-     - name: Run checker
-  env:
-    GMAIL_USER: ${{ secrets.MAIL_FROM }}
-    TO_EMAIL:   ${{ secrets.MAIL_TO }}
-    GMAIL_PASS: ${{ secrets.MAIL_PASS }}
-  run: python check_shitennoji.py
-
+      - name: Run checker
+        env:
+          GMAIL_USER: ${{ secrets.MAIL_FROM }}
+          TO_EMAIL:   ${{ secrets.MAIL_TO }}
+          GMAIL_PASS: ${{ secrets.MAIL_PASS }}
+        run: python check_shitennoji.py
